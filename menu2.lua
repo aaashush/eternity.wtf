@@ -12,7 +12,7 @@ repeat
     makefolder("eclipse.wtf")
  end
  
- local menu = game:GetObjects("rbxassetid://17171194056")[1] 
+ local menu = game:GetObjects("rbxassetid://131573133674738")[1] 
  local tabholder = menu.bg.bg.bg.bg.bg.bg.main.group;
  local tabviewer = menu.bg.bg.bg.bg.bg.bg.tabbuttons;
  for _, obj in pairs(menu:GetDescendants()) do
@@ -297,7 +297,7 @@ repeat
  end
  
  local library = {
-    Title = 'eclipse.<font color="rgb(0, 126, 255)">wtf</font> || fallen',
+    Title = 'eclipse.<font color="rgb(0, 126, 255)">wtf</font>',
     keybind = Enum.KeyCode.RightBracket,
     Watermark = createWatermark(),
        Colors = {
