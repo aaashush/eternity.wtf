@@ -1,6 +1,6 @@
------- * Eclipse priv_9 Menu * ------
+------ * eternity priv_9 Menu * ------
 --[[
-    # Rewriten by: eclipse_wtf
+    # Rewriten by: eternity_wtf
 ]]
 
 repeat
@@ -8,8 +8,8 @@ repeat
  until game:IsLoaded()
  
  -- Menu/UI Creation
- if not isfile("eclipse.wtf") then
-    makefolder("eclipse.wtf")
+ if not isfile("eternity.wtf") then
+    makefolder("eternity.wtf")
  end
  
  local menu = game:GetObjects("rbxassetid://131573133674738")[1] 
@@ -290,14 +290,14 @@ repeat
          local ping = string.format('%.0f', game.Stats.Network.ServerStatsItem["Data Ping"]:GetValue())
          local uid = "1"
          local fpsValue = string.split(game.Stats.Workspace.Heartbeat:GetValueString(), ".")[1]
-         WaterMarkLabel.Text = 'eclipse.<font color="rgb(0, 126, 255)">wtf</font> - uid: <font color="rgb(0, 126, 255)">' .. uid .. '</font> / fps: <font color="rgb(0, 126, 255)">' .. fpsValue .. '</font> / ping: <font color="rgb(0, 126, 255)">' .. ping .. '</font> / time: <font color="rgb(0, 126, 255)">' .. time .. '</font>'
+         WaterMarkLabel.Text = 'eternity.<font color="rgb(0, 126, 255)">wtf</font> - uid: <font color="rgb(0, 126, 255)">' .. uid .. '</font> / fps: <font color="rgb(0, 126, 255)">' .. fpsValue .. '</font> / ping: <font color="rgb(0, 126, 255)">' .. ping .. '</font> / time: <font color="rgb(0, 126, 255)">' .. time .. '</font>'
        end
     end)
     return Watermark
  end
  
  local library = {
-    Title = 'eclipse.<font color="rgb(0, 126, 255)">wtf</font>',
+    Title = 'eternity.<font color="rgb(0, 126, 255)">wtf</font>',
     keybind = Enum.KeyCode.RightBracket,
     Watermark = createWatermark(),
        Colors = {
@@ -349,13 +349,13 @@ repeat
     
     menu.bg.Position = UDim2.new(0.5,-menu.bg.Size.X.Offset/2,0.5,-menu.bg.Size.Y.Offset/2)
     menu.Parent = CloneCore
-    menu.Name = "eclipse_gui"
+    menu.Name = "eternity_gui"
     local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end)
     local CloneScreenGui = cloneref(Instance.new("ScreenGui"))
     ProtectGui(CloneScreenGui)   
     CloneScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
     CloneScreenGui.Parent = CloneCore
-    CloneScreenGui.Name = "eclipse_gui"
+    CloneScreenGui.Name = "eternity_gui"
  
     local menu_text_label = Instance.new("TextLabel", menu.bg)
     menu_text_label.Name = "pre"
@@ -2323,7 +2323,7 @@ repeat
                             if v == x then return true end
                             end return false end
                             function library:createConfig()
-                                makefolder("eclipse.wtf")
+                                makefolder("eternity.wtf")
                                 local name = library.flags["config_name"]
                                 if contains(library.options["config_box"].values, name) then return library:Notify(name..".cfg already exists!", 5) end
                                 if name == "" then return library:Notify("You need to put a name in!", 5) end
@@ -2335,14 +2335,14 @@ repeat
                                 else jig[i] = v
                                 end
                             end
-                            writefile("eclipse.wtf/"..name..".cfg",game:GetService("HttpService"):JSONEncode(jig))
+                            writefile("eternity.wtf/"..name..".cfg",game:GetService("HttpService"):JSONEncode(jig))
                             library:Notify("Succesfully created config "..name..".cfg!", 5)
                             library:refreshConfigs()
                         end
  
                         function library:saveConfig()
                             pcall(function()
-                                makefolder("eclipse.wtf")
+                                makefolder("eternity.wtf")
                                 local name = library.flags["config_box"]
                                 if not name then
                                     return
@@ -2406,7 +2406,7 @@ repeat
  
                 function library:refreshConfigs()
                     local tbl = {}
-                    for i,v in next, listfiles("eclipse.wtf") do table.insert(tbl,v) end
+                    for i,v in next, listfiles("eternity.wtf") do table.insert(tbl,v) end
                     library.options["config_box"].refresh(tbl)
                 end      
             end)()                         
